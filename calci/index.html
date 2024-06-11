@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+            color: aliceblue;
+        }
+
+        button {
+            background-color: aquamarine;
+            color: black;
+
+        }
+
+        #res {
+            background-color: bisque;
+        }
+
+        #ope {
+            list-style-type: none;
+        }
+
+        #fnum {
+            width: 141px;
+            background-color: darkgray;
+        }
+
+        #snum {
+            width: 141px;
+            background-color: darkgray;
+        }
+
+        #ope {
+            background-color: cornsilk;
+            height: 25px;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><i>My Calculator</i></h1>
+    <hr>
+    <input type="number" id="fnum" placeholder="enter first number" step="any">
+    <select name="" id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+
+    </select>
+    <input type="number" id="snum" placeholder="enter second number" step="any"><br><br>
+    <button onclick="calc()">calculate</button>
+    <hr>
+    <label for="">Result:</label><br>
+    <input type="text" id="res" readonly>
+
+
+    <script>
+        function calc() {
+            var opr1 = document.getElementById("fnum").value;
+            // alert(opr1);
+            var opt = document.getElementById("ope").value;
+            var opr2 = document.getElementById("snum").value;
+            var res;
+            if (opt == "+") {
+                res = parseFloat(opr1) + parseFloat(opr2);
+            }
+            if (opt == "-") {
+                res = parseFloat(opr1) - parseFloat(opr2);
+            }
+            if (opt == "*") {
+                res = parseFloat(opr1) * parseFloat(opr2);
+            }
+            if (opt == "/") {
+                res = parseFloat(opr1) / parseFloat(opr2);
+            }
+            if (opt == "%") {
+                res = parseFloat(opr1) % parseFloat(opr2);
+            }
+            document.getElementById("res").value = res;
+        }
+    </script>
+</body>
+
+</html>
